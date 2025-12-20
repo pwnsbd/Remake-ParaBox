@@ -1,0 +1,13 @@
+# Build output
+build/
+out/
+cmake-build-*/
+
+# External sources fetched by CMake
+external/glfw/
+external/glad/
+external/glm/
+
+# Keep bootstrap logic
+!external/CMakeLists.txt
+!external/cmake/**
