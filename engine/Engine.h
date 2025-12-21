@@ -17,7 +17,7 @@ private:
     Core m_core;
     Render m_render;
     Input m_input;
-    Scene m_scene;
+    Window m_window;
 };
 
 
