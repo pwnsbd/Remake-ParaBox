@@ -4,11 +4,11 @@
 
 #include "Game.h"
 
-Game::Game(): m_window(600, 600, "ParaBox"), m_shader("assets/shaders/vShader.vert", "assets/shaders/fShader.frag") {
+Engine::Engine(): m_window(600, 600, "ParaBox"), m_shader("assets/shaders/vShader.vert", "assets/shaders/fShader.frag") {
 init();
 }
 
-void Game::init() {
+void Engine::init() {
     float vertices[] = {
         -0.5f, -0.5f, 0.0f,
          0.5f, -0.5f, 0.0f,
@@ -30,7 +30,7 @@ void Game::init() {
 
 
 
-void Game::run() {
+void Engine::run() {
     const float FIXED_DT = 1.0f/60.0f;
     float accumulatedTime = 0.0f;
     double lastTime = glfwGetTime();
@@ -52,7 +52,6 @@ void Game::run() {
             accumulatedTime -= FIXED_DT;
         }
         glfwPollEvents();
-        m_input.update(m_window.getWindow());
 
         update();
         render();
@@ -62,25 +61,15 @@ void Game::run() {
     }
 }
 
-void Game::fixedUpdate(float deltaTime) {
+void Engine::fixedUpdate(float deltaTime) {
     cout<<"fixedUpdate"<<endl;
 }
 
-void Game::update() {
-    m_window.processInput();
-    if (m_input.pressed(GLFW_KEY_SPACE)) {
-        cout << "Space pressed" << endl;
-    }
-    if (m_input.held(GLFW_KEY_SPACE)) {
-        cout << "Space held" << endl;
-    }
-    if (m_input.released(GLFW_KEY_SPACE)) {
-        cout << "Space relesed" << endl;
-    }
+void Engine::update() {
 
 }
 
-void Game::render() {
+void Engine::render() {
     glClearColor(1.0f, 0.0f, 0.25, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 
@@ -92,7 +81,7 @@ void Game::render() {
     glDrawArrays(GL_TRIANGLES, 0, 3);
 }
 
-Game::~Game() {
+Engine::~Engine() {
     glDeleteVertexArrays(1, &m_vao);
     glDeleteBuffers(1, &m_vbo);
 }

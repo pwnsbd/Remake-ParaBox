@@ -1,8 +1,7 @@
 add_library(ParaBoxCore
         CreateWindow.cpp
-        CreateWindow.h
-        Input.cpp
-        Input.h
+        core.cpp
+        Scene.h
 )
 
 target_include_directories(ParaBoxCore PUBLIC

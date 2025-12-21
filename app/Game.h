@@ -5,14 +5,13 @@
 #ifndef PARABOX_GAME_H
 #define PARABOX_GAME_H
 
-#include "Shader.h"
+#include "Render.h"
 #include "CreateWindow.h"
-#include "Input.h"
 
-class Game {
+class Engine {
 public:
-    Game();
-    ~Game();
+    Engine();
+    ~Engine();
     void run();
 
 private:
@@ -22,8 +21,7 @@ private:
     void render();
 
     CreateWindow m_window;
-    Shader m_shader;
-    Input m_input;
+    Render m_shader;
 
     unsigned int m_vao;
     unsigned int m_vbo;

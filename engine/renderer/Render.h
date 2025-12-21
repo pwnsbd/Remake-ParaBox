@@ -14,7 +14,7 @@
 
 using namespace std;
 
-class Shader {
+class Render {
     public:
     /*
      * vShaderFile & fShaderFile : Shader file
@@ -24,7 +24,7 @@ class Shader {
      * programID : It's the gl program id to link vertex shader and fragment shader
      *
      */
-    Shader(const string &vert, const string &frag) {
+    Render(const string &vert, const string &frag) {
         ifstream vShaderFile, fShaderFile;
         stringstream vStringStream, fStringStream;
         string vertStr, fragStr;

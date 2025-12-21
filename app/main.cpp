@@ -3,14 +3,14 @@
 
 #include "Game.h"
 #include "../engine/Core/CreateWindow.h"
-#include "../engine/renderer/Shader.h"
+#include "../engine/renderer/Render.h"
 
 
 using namespace std;
 
 int main() {
     cout << "Main cpp has been triggered;" << endl;
-    Game game;
+    Engine game;
     game.run();
     return 0;
 }

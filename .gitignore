@@ -3,6 +3,8 @@ build/
 out/
 cmake-build-*/
 
+.idea/
+
 # External sources fetched by CMake
 external/glfw/
 external/glad/
