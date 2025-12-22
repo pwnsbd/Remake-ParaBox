@@ -3,22 +3,30 @@
 // The Interface for engine
 //
 
-#ifndef PARABOX_ENGINE_H
-#define PARABOX_ENGINE_H
+#ifndef ENGINE_H
+#define ENGINE_H
+
+#include <vector>
+#include "Window.h"
 #include "Render.h"
+#include "Core.h"
+#include "Input.h"
 
 class Engine {
 public:
     Engine();
-    ~Engine();
-
+    // ~Engine();
+    Window* getWindow() const;
+    void render(const std::vector<float>  &vertices) ;
+    void mainLoop() const;
 
 private:
-    Core m_core;
-    Render m_render;
-    Input m_input;
+    // Core m_core;
     Window m_window;
+    Render m_render;
+    // Input m_input;
+
 };
 
 
-#endif //PARABOX_ENGINE_H
+#endif //ENGINE_H

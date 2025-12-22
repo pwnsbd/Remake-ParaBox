@@ -1,11 +1,18 @@
-add_library(ParaBoxEngine Engine.cpp)
+add_library(Engine Engine.cpp)
 
 add_subdirectory(core)
 add_subdirectory(renderer)
-add_subdirectory(Input_handling)
+add_subdirectory(Input)
+add_subdirectory(window)
 
-target_link_libraries(ParaBoxEngine PUBLIC
-        ParaBoxCore
-        ParaBoxRenderer
-        Input_Handling
+
+target_include_directories(Window PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}
+)
+
+target_link_libraries(Engine PUBLIC
+        Core
+        Renderer
+        Input
+        Window
 )
