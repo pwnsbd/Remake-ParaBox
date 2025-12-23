@@ -57,7 +57,7 @@ Render::Render(const std::string& vert, const std::string& frag)
     glDeleteShader(fragment);
 }
 
-unsigned int Render::draw(const std::vector<float> &vertices) {
+void Render::draw() const {
     unsigned int vao, vbo;
     glGenVertexArrays(1, &vao);
     glBindVertexArray(vao);
@@ -66,7 +66,7 @@ unsigned int Render::draw(const std::vector<float> &vertices) {
     glGenBuffers(1, &vbo);
     glBindBuffer(GL_ARRAY_BUFFER, vbo);
 
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices.data(), GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(m_vertices), m_vertices.data(), GL_STATIC_DRAW);
     // Now we have pointed which is our vertex data using the m_vbo
 
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), nullptr);
@@ -75,9 +75,8 @@ unsigned int Render::draw(const std::vector<float> &vertices) {
     glClearColor(1.0f, 0.0f, 0.25, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 
-    return vao;
-
-
+    glBindVertexArray(vao);
+    // use();
 }
 
 void Render::use() const

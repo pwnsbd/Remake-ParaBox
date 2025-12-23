@@ -17,8 +17,9 @@ public:
     Engine();
     // ~Engine();
     Window* getWindow() const;
-    void render(const std::vector<float>  &vertices) ;
+    void render() const;
     void mainLoop() const;
+    void setVertices(const std::vector<float>  &vertices);
 
 private:
     // Core m_core;
