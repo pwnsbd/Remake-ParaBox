@@ -5,5 +5,5 @@ add_executable(ParaBox
 )
 
 target_link_libraries(ParaBox PRIVATE
-        ParaBoxEngine
+        Engine
 )

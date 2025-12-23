@@ -1,15 +1,13 @@
-add_library(ParaBoxCore
+add_library(Core
         CreateWindow.cpp
-        CreateWindow.h
-        Input.cpp
-        Input.h
+        core.cpp
 )
 
-target_include_directories(ParaBoxCore PUBLIC
+target_include_directories(Core PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-target_link_libraries(ParaBoxCore PUBLIC
+target_link_libraries(Core PUBLIC
         glad
         glfw
 )

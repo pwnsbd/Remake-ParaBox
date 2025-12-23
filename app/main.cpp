@@ -1,16 +1,27 @@
 #include <iostream>
 #include <glad/glad.h>
 
-#include "Game.h"
-#include "../engine/Core/CreateWindow.h"
-#include "../engine/renderer/Shader.h"
+//#include "Game.h"
+#include "Engine.h"
+
 
 
 using namespace std;
 
 int main() {
     cout << "Main cpp has been triggered;" << endl;
-    Game game;
-    game.run();
+    Engine game;
+
+    vector<float> vertices = {
+            -0.5f, -0.5f, 0.0f,
+             0.5f, -0.5f, 0.0f,
+             0.0f,  0.5f, 0.0f
+        };
+
+    game.setVertices(vertices);
+    game.mainLoop();
+
+
+
     return 0;
 }

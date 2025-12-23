@@ -1,10 +1,11 @@
-add_library(ParaBoxRenderer INTERFACE)
+add_library(Renderer
+        Render.cpp)
 
-target_include_directories(ParaBoxRenderer INTERFACE
+target_include_directories(Renderer PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-target_link_libraries(ParaBoxRenderer INTERFACE
+target_link_libraries(Renderer PUBLIC
         glad
         OpenGL::GL
 )

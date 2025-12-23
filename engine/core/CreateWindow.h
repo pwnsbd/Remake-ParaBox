@@ -2,10 +2,11 @@
 // Created by torup on 12/17/2025.
 //
 
-#ifndef PARABOX_CREATEWINDOW_H
-#define PARABOX_CREATEWINDOW_H
+#ifndef CREATEWINDOW_H
+#define CREATEWINDOW_H
 
 #include <iostream>
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
 using namespace std;
@@ -27,4 +28,4 @@ private:
 };
 
 
-#endif //PARABOX_CREATEWINDOW_H
+#endif //CREATEWINDOW_H
