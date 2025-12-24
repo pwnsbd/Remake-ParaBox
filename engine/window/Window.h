@@ -17,8 +17,10 @@ public:
     static void error_callback(int error, const char* description);
     static void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 
+    static void terminate(GLFWwindow* window, int key, int scancode, int action, int mods);
+
 private:
-    GLFWwindow* window;
+    GLFWwindow* m_window;
 };
 
 

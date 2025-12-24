@@ -23,20 +23,20 @@ Window::Window(int width, int height, const char* appName) {
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-    this->window = glfwCreateWindow(width, height, appName, nullptr, nullptr);
-    if (!window) {
+    this->m_window = glfwCreateWindow(width, height, appName, nullptr, nullptr);
+    if (!m_window) {
         glfwTerminate();
         std::cout << "Failed to initalize the window" << std::endl;
         exit(EXIT_FAILURE);
     }
     std::cout << "Window initializing" << std::endl;
 
-    glfwMakeContextCurrent(window);
+    glfwMakeContextCurrent(m_window);
     if(!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
         std::cout << "Failed to initialize GLAD" << std::endl;
     }
 
-    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+    glfwSetFramebufferSizeCallback(m_window, framebuffer_size_callback);
 
 }
 
@@ -45,12 +45,18 @@ void Window::error_callback(int error, const char *description) {
 }
 
 GLFWwindow* Window::getWindow() const {
-    return this->window;
+    return this->m_window;
 }
 
+ void Window::terminate(GLFWwindow* window, int key, int scancode, int action, int mods) {
+        if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) {
+            glfwSetWindowShouldClose(window, GLFW_TRUE);
+            std::cout << "Escape key pressed" << std::endl;
+        }
+    }
 
 Window::~Window() {
-    glfwDestroyWindow(window);
+    glfwDestroyWindow(m_window);
     glfwTerminate();
 }
 

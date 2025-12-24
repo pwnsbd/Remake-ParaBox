@@ -4,8 +4,10 @@
 
 #include "Engine.h"
 
-Engine::Engine() : m_window(600, 600, "modified"), m_render("assets/shaders/vShader.vert", "assets/shaders/fShader.frag") {
-
+Engine::Engine() :
+    m_window(600, 600, "modified"),
+    m_render("assets/shaders/vShader.vert", "assets/shaders/fShader.frag"),
+    m_input(&m_window) {
 }
 
 void Engine::mainLoop() const {

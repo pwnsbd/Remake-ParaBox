@@ -19,7 +19,13 @@ int main() {
         };
 
     game.setVertices(vertices);
+
+
+    std::cout << "main Key pressed" << std::endl;
+    game.m_input.registerInput();
+
     game.mainLoop();
+
 
 
 

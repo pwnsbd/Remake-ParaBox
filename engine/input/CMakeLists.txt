@@ -5,6 +5,7 @@ target_include_directories(Input PUBLIC
 )
 
 target_link_libraries(Input PRIVATE
+        Window
         glad
         glfw
 )
