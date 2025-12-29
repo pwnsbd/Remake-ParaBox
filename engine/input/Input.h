@@ -11,8 +11,8 @@ public:
     Input(Window* window) {
         m_window = window;
     }
-    void registerInput();
 
+    void registerInput();
     void processInput();
     bool keyPressed (int key);
 private:

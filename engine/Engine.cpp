@@ -22,7 +22,7 @@ void Engine::render() const {
     m_render.draw();
     m_render.use();
 
-    glDrawArrays(GL_TRIANGLES, 0, 3);
+    glDrawArrays(GL_TRIANGLES, 0, 9);
 }
 
 void Engine::setVertices(const std::vector<float> &vertices) {
