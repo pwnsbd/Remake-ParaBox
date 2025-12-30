@@ -2,7 +2,7 @@
 // Created by torup on 12/27/2025.
 //
 
-#include "../GameObject.h"
+#include "GameObject.h"
 
 GameObject::GameObject() {
 }
