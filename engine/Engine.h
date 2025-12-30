@@ -16,16 +16,18 @@ class Engine {
 public:
     Engine();
     // ~Engine();
-    Window* getWindow() const;
+    Input m_input;
+
     void render() const;
     void mainLoop() const;
     void setVertices(const std::vector<float>  &vertices);
+    Core m_core;
 
 private:
-    // Core m_core;
+
     Window m_window;
     Render m_render;
-    // Input m_input;
+
 
 };
 

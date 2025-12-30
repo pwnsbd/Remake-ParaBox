@@ -3,19 +3,15 @@
 //
 
 #include "Input.h"
+#include <GLFW/glfw3.h>
 
 
-// void Window::processInput() {
+// void Input::processInput(Window* window) {
 //     if (glfwGetKey(this->window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
 //         glfwSetWindowShouldClose(this->window, GLFW_TRUE);
 //     }
 // }
 
-
-// !!!!!!THESE PARTS SHOULD// glfwSetKeyCallback(window, key_callback);
-// void CreateWindow::key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
-//     if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) {
-//         glfwSetWindowShouldClose(window, GLFW_TRUE);
-//         cout << "Escape key pressed" << endl;
-//     }
-// }
+void Input::registerInput() {
+    glfwSetKeyCallback(m_window->getWindow(), m_window->terminate);
+}
