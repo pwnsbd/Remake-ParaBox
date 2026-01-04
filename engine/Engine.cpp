@@ -20,7 +20,7 @@ void Engine::mainLoop(){
 
 void Engine::render() {
 
-    for (auto go : m_core.m_scene.a_gameObjects) {
+    for (auto& go : m_core.m_scene.a_gameObjects) {
         m_render.setVertices(go.getVertices());
         m_render.draw();
         m_render.use();
