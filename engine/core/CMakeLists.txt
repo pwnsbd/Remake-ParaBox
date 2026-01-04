@@ -1,8 +1,8 @@
 add_library(Core
         CreateWindow.cpp
         core.cpp
-        GameObject/Triangle.cpp
-        GameObject/Triangle.h
+        GameObject/GameObject.cpp
+        Scene.cpp
 )
 add_subdirectory(GameObject)
 target_include_directories(Core PUBLIC

@@ -4,13 +4,17 @@
 
 #ifndef CORE_H
 #define CORE_H
+#include "Scene.h"
+#include "../renderer/Render.h"
 
 class Core {
 public:
     Core();
-    ~Core();
+    // ~Core();
     void run();
-
+    Scene m_scene;
+    GameObject m_gameObject;
+    void render(const Render &ren);
 private:
     void fixedUpdate(float FIXED_DT);
     void update();

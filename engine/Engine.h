@@ -18,8 +18,8 @@ public:
     // ~Engine();
     Input m_input;
 
-    void render() const;
-    void mainLoop() const;
+    void render();
+    void mainLoop();
     void setVertices(const std::vector<float>  &vertices);
     Core m_core;
 
