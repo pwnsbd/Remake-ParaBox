@@ -19,6 +19,9 @@ public:
 
 private:
     GLuint programID;
+    unsigned VAO;
+    unsigned VBO;
+    //Shaders
     std::vector<float> m_vertices;
     void checkCompileErrors(unsigned int shader, std::string type);
 };
