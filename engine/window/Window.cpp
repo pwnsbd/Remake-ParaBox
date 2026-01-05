@@ -48,12 +48,12 @@ GLFWwindow* Window::getWindow() const {
     return this->m_window;
 }
 
- void Window::terminate(GLFWwindow* window, int key, int scancode, int action, int mods) {
-        if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) {
-            glfwSetWindowShouldClose(window, GLFW_TRUE);
-            std::cout << "Escape key pressed" << std::endl;
-        }
-    }
+//  void Window::terminate(GLFWwindow* window, int key, int scancode, int action, int mods) {
+//     if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) {
+//         glfwSetWindowShouldClose(window, GLFW_TRUE);
+//         std::cout << "Escape key pressed" << std::endl;
+//     }
+// }
 
 Window::~Window() {
     glfwDestroyWindow(m_window);

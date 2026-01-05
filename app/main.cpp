@@ -3,7 +3,6 @@
 
 //#include "Game.h"
 #include "Engine.h"
-
 #include "../engine/core/GameObject/GameObject.h"
 
 using namespace std;
@@ -35,8 +34,13 @@ int main() {
     game.m_core.m_scene.addGameObject(newGameObject);
 
 
+    if (Input::keyState[87] == 1) {
+        std::cout << "W key is holding" << std::endl;
+    }
+
     std::cout << "main Key pressed" << std::endl;
     game.m_input.registerInput(); // binds the escape
+
 
     game.mainLoop();
 

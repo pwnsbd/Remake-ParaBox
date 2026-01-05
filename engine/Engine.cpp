@@ -13,6 +13,7 @@ Engine::Engine() :
 void Engine::mainLoop(){
     while (!glfwWindowShouldClose(m_window.getWindow())) {
         render();
+
         glfwPollEvents();
         glfwSwapBuffers(m_window.getWindow());
     }
@@ -36,5 +37,6 @@ void Engine::render() {
 //     // m_render.setVertices(vertices);
 //     m_core.m_gameObject.setNoOfVertices(vertices);
 // }
+
 
 

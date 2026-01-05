@@ -1,5 +1,4 @@
 add_library(Core
-        CreateWindow.cpp
         core.cpp
         GameObject/GameObject.cpp
         Scene.cpp
